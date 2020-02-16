@@ -21,9 +21,10 @@ public class HelloServlet extends HttpServlet {
      * Servlet container needs it.
      */
     @SuppressWarnings("unused")
-    public HelloServlet(){
+    public HelloServlet() {
         this(new HelloService());
     }
+
     public HelloServlet(HelloService service) {
         this.service = service;
     }
@@ -33,7 +34,7 @@ public class HelloServlet extends HttpServlet {
         var reqestMap = req.getParameterMap();
         logger.info("Request got" + req.getParameter("name"));
         resp.getWriter().write(service.prepareGreeting(req.getParameter(NAME_PARAM)));
-       // var name = req.getParameter("name");
+        // var name = req.getParameter("name");
 //         ((map != null) ? (resp.getWriter().write("Hello " + map)) : (resp.getWriter().write("Hello " ));
         //resp.getWriter().write("Hello " + (NAME_PARAM != null ? NAME_PARAM : "someone"));
     }
